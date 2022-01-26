@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  /* border-bottom: 1px solid #d3d6da; */
+  min-height: 10px;
+}
+
+header .title {
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+header .icon:hover {
+  cursor: pointer;
+  transform: scale(1.25);
+}

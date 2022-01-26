@@ -1,0 +1,23 @@
+.word-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  outline: none;
+
+}
+
+.place-holder-letter {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: white;
+  text-transform: uppercase;
+  user-select: none;
+  background-color: #939598;
+}
