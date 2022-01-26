@@ -69,7 +69,7 @@ const Word = ({ type, letters }: IWordProps) => {
         onKeyDown={(e: any) => updateWord(e)}
       >
         {letters!.map((letter, index) => {
-          return <Letter key={index} position={index} invalidWord={invalidWord} current={true} letter={letter} />;
+          return <Letter key={index} invalidWord={invalidWord} current={true} letter={letter} />;
         })}
       </div>
     );

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 import { ILetter } from "../../types";
 import "./letter.css";
 
@@ -7,7 +9,6 @@ interface ILetterProps {
   current: boolean;
   idle?: boolean;
   invalidWord?: boolean;
-  position?: number;
 }
 
 const [color_correct, color_absent, color_present, color_current] = [
@@ -19,9 +20,12 @@ const [color_correct, color_absent, color_present, color_current] = [
 
 const borderStyle = "2px solid #d3d6da";
 
-const Letter = ({ letter, current, idle, invalidWord, position }: ILetterProps) => {
+const Letter = ({ letter, current, idle, invalidWord }: ILetterProps) => {
   const [tileColor, setTileColor] = useState<string>(color_absent);
   const [border, setBorder] = useState<string | null>(null);
+  const {submittedWords} = useSelector<RootState, RootState["wordReducer"]>(
+    (state) => state.wordReducer
+  );
 
   useEffect(() => {
     if (letter.correct) {
@@ -36,8 +40,8 @@ const Letter = ({ letter, current, idle, invalidWord, position }: ILetterProps) 
   });
 
   useEffect(() => {
-    setBorder(invalidWord ? '1px solid #DC143C' : null);
-  }, [invalidWord])
+    setBorder(invalidWord ? '2px solid #DC143C' : null);
+  }, [invalidWord]);
 
 
   return (

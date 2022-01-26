@@ -21,7 +21,7 @@ const Header = () => {
           style={{marginLeft:10}}
         />
       </div>
-      <div className="title">Wordle-<i style={{textTransform:'lowercase'}}>ish</i></div>
+      <div className="title"><span>Wordle</span>-<i style={{textTransform:'lowercase'}}>ish</i></div>
       <div className="menu">
         <IoStatsChartSharp
           onClick={() => alert("coming soon!")}

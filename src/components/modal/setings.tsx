@@ -17,13 +17,12 @@ const Settings = ({ open, onClose }: IConfig) => {
   const dispatch = useDispatch();
   const [height, setHeight] = useState<number>(window.innerHeight - 250);
   useEventListener("resize", () => setHeight(window.innerHeight - 250));
-  const { currentTheme: { darkMode } } = useSelector<RootState, RootState["themeReducer"]>(
+  const { currentTheme: { darkMode, colors: { background, color } } } = useSelector<RootState, RootState["themeReducer"]>(
     (state) => state.themeReducer
   );
 
   const customStyles = {
     content: {
-      width: height * (5 / 6),
       maxWidth: 500,
       margin: "0 auto",
       display: "flex",
@@ -31,6 +30,8 @@ const Settings = ({ open, onClose }: IConfig) => {
       alignItems: "center",
       top: 10,
       bottom: 10,
+      backgroundColor: background,
+      color: color,
     },
   };
 
